@@ -1,0 +1,4 @@
+.client-item {
+  display: flex;
+  flex-direction: row;
+}

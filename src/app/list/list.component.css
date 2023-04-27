@@ -1,0 +1,12 @@
+:host {
+   min-width: 45%;
+}
+
+.container-list-client {
+  max-width: 100%;
+  margin: 10px;
+  border: 1px solid #0D2149;
+  display: flex;
+  flex-direction: column;
+  background-color: #208AAE;
+}
