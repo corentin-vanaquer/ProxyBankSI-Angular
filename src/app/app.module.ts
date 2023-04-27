@@ -9,6 +9,8 @@ import { ListItemComponent } from './list-item/list-item.component';
 import { DetailsClientComponent } from './details-client/details-client.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { AccountListComponent } from './account-list/account-list.component';
+import { AccountListItemComponent } from './account-list-item/account-list-item.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { RouterModule } from '@angular/router';
     ListComponent,
     ListItemComponent,
     DetailsClientComponent,
+    AccountListComponent,
+    AccountListItemComponent,
   ],
   imports: [
     BrowserModule,
