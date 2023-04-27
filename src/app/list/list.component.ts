@@ -15,17 +15,19 @@ export class ListComponent {
   constructor( private cliSer : ListClientService ){}
 
   ngOnInit() {
-    this.getClients();
+    this.cliSer.getAllClientsUrl().subscribe({
+      next: (result: Client[]) => {
+        this.allClient = result;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 
   sendClientToAccueil(cli) {
     this.clientToAccueil.emit(cli);
   }
-
-  getClients():void {
-    this.allClient = this.cliSer.getAllClients();
-  }
-
 }
 /*ngOnInit() {
   this.candSer.getAllCandidatsAPI().subscribe({
