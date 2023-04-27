@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Client } from '../models/client';
-import { ListClientService } from '../services/list-client.service';
+import { ListClientService } from '../services/list-candidat.service';
 
 @Component({
   selector: 'app-accueil',

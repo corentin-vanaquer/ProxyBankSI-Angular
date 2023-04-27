@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Client } from '../models/client';
-import { ListClientService } from '../services/list-client.service';
+import { ListClientService } from '../services/list-candidat.service';
 
 @Component({
   selector: 'app-list',
@@ -18,6 +18,7 @@ export class ListComponent {
     this.cliSer.getAllClientsUrl().subscribe({
       next: (result: Client[]) => {
         this.allClient = result;
+        console.log(result);
       },
       error: (err) => {
         console.log(err);
