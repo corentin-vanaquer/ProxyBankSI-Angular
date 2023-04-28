@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Client } from '../models/client';
 
 @Component({
   selector: 'app-client-details',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./client-details.component.css']
 })
 export class ClientDetailsComponent {
-
+  @Input() cliSelected: Client;  
 }
