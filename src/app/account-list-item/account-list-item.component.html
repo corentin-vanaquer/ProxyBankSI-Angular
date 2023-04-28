@@ -1,12 +1,3 @@
-<div>
-    <h2>Compte {{ account.id }}</h2>
-    <p>Numéro de compte: {{ account.accountNumber }}</p>
-    <p>Solde: {{ account.solde }}</p>
-    <div *ngIf="account.rate">
-      <p>Taux: {{ account.rate }}</p>
-    </div>
-    <div *ngIf="account.threshold">
-      <p>Seuil: {{ account.threshold }}</p>
-    </div>
-  </div>
-  
+  <li (click)="sendAccountToList()" *ngIf="account.rate || account.threshold " class="client-item">
+    Account : {{ account.id }} || Account Number: {{ account.accountNumber }} || Solde: {{ account.solde }} || Rate : {{ account.rate }} || threshold: {{ account.threshold }}
+  </li>
