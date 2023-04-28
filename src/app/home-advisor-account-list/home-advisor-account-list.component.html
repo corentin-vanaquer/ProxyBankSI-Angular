@@ -1,5 +1,5 @@
 
 <div class="container-accueil">
-  <app-account-list></app-account-list>
+  <app-account-list (accountToHome)="fetchSelectedAccount($event)"></app-account-list>
   <app-account-details></app-account-details>
 </div>

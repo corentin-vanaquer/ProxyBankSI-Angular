@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ListAccountService } from '../services/list-account.service';
 
 @Component({
   selector: 'app-account-list',
@@ -7,26 +8,24 @@ import { Component } from '@angular/core';
 })
 export class AccountListComponent {
 
-  ListAccount = {
-    compte1: {
-      id: 1,
-      accountNumber: "0123456789",
-      solde: 1000.50,
-      rate: 20
-    },
-    compte2: {
-      id: 2,
-      accountNumber: "9876543210",
-      solde: 2500.00,
-      threshold: 5000
-    },
-    compte3: {
-      id: 3,
-      accountNumber: "5555555555",
-      solde: 500.00,
-      rate: 10
-    },
-  };
+  allAccounts : any = [];
+  @Output() accountToHome = new EventEmitter();
 
-  accountList = Object.values(this.ListAccount);
+  constructor(private accountService : ListAccountService){}
+
+  ngOnInit(){
+    this.accountService.getAllAccounts().subscribe({
+      next:(result: any) => {
+        this.allAccounts = result;
+        console.log(`Δ result:`, result);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
+  sendAccountToHome(account){
+    this.accountToHome.emit(account);
+  }
 }

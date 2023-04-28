@@ -8,8 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class AccountListItemComponent {
 
   @Input() account: any;
-  
+  @Output() accountToList = new EventEmitter();
 
-  constructor(){}
-  ngOnInit(){}
+  sendAccountToList(){
+    this.accountToList.emit(this.account);
+  }
+
 }
