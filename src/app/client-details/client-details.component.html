@@ -3,10 +3,8 @@
             <h3 class="name"> {{cliSelected.name }} {{cliSelected.firstname }}</h3>
             <p class="id"> Identifiant: {{cliSelected.id}}</p>
             <p class="address"> Adresse: {{cliSelected.address }} {{cliSelected.zipcode}} {{cliSelected.city}} </p>
-            <p class="contact"> Telephone: {{cliSelected.phone}}</p>
-        </div>
-        <div>
-            <button [routerLink]="[cliSelected.id]">Modifier</button>
-        </div>
+            <p class="contact"> Telephone: {{cliSelected.phone}}</p> 
+            <button>Update</button>          
+       </div>
     </div>
 

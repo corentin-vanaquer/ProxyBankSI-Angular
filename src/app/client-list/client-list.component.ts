@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Client } from '../models/client';
-import { ListClientService } from '../services/list-client.service';
+import { ListClientService } from '../services/list-candidat.service';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: 'app-client-list',
+  templateUrl: './client-list.component.html',
+  styleUrls: ['./client-list.component.css']
 })
-export class ListComponent {
+export class ClientListComponent {
 
   @Input() allClient: Client[];
   @Output() clientToAccueil = new EventEmitter();
@@ -18,6 +18,7 @@ export class ListComponent {
     this.cliSer.getAllClientsUrl().subscribe({
       next: (result: Client[]) => {
         this.allClient = result;
+        console.log(result);
       },
       error: (err) => {
         console.log(err);
