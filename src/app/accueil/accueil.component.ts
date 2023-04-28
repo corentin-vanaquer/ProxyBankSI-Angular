@@ -17,6 +17,7 @@ export class AccueilComponent {
     this.tabClients = this.cliSer.getAllClients();
   }
 
+  //selectedCli: Client;
   recupererSelectedCli(cli) {
     this.selectedClient = cli;
   }

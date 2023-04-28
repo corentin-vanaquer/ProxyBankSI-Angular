@@ -1,6 +1,6 @@
 <router-outlet></router-outlet>
 
 <div class="container-accueil">
-  <app-list (clientToAccueil)="recupererSelectedCli($event)"></app-list>
-  <app-details-client></app-details-client>
+  <app-list (clientToAccueil)="recupererSelectedCli($event)" [allClient] = "tabClients"></app-list>
+  <app-details-client [cliSelected] = "selectedClient"></app-details-client> 
 </div>

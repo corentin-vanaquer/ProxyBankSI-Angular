@@ -9,6 +9,7 @@ import { ListItemComponent } from './list-item/list-item.component';
 import { DetailsClientComponent } from './details-client/details-client.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     ListComponent,
     ListItemComponent,
     DetailsClientComponent,
+   
   ],
   imports: [
     BrowserModule,

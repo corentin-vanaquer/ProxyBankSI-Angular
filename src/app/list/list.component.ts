@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Client } from '../models/client';
 import { ListClientService } from '../services/list-client.service';
 
@@ -9,7 +9,7 @@ import { ListClientService } from '../services/list-client.service';
 })
 export class ListComponent {
 
-  allClient: Client[];
+  @Input() allClient: Client[];
   @Output() clientToAccueil = new EventEmitter();
 
   constructor( private cliSer : ListClientService ){}
