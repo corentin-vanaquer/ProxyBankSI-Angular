@@ -3,11 +3,11 @@ import { Client } from '../models/client';
 import { ListClientService } from '../services/list-candidat.service';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  selector: 'app-client-list',
+  templateUrl: './client-list.component.html',
+  styleUrls: ['./client-list.component.css']
 })
-export class ListComponent {
+export class ClientListComponent {
 
   allClient: Client[];
   @Output() clientToAccueil = new EventEmitter();

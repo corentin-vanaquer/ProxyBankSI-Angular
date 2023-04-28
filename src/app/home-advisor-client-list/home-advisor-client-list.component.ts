@@ -3,11 +3,11 @@ import { Client } from '../models/client';
 import { ListClientService } from '../services/list-candidat.service';
 
 @Component({
-  selector: 'app-accueil',
-  templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.css']
+  selector: 'app-home-advisor-client-list',
+  templateUrl: './home-advisor-client-list.component.html',
+  styleUrls: ['./home-advisor-client-list.component.css']
 })
-export class AccueilComponent {
+export class HomeAdvisorClientListComponent {
   tabClients: Client[] = [];
   selectedClient: Client;
 

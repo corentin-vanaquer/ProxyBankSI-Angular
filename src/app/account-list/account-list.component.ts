@@ -27,5 +27,6 @@ export class AccountListComponent {
       rate: 10
     },
   };
-  
+
+  accountList = Object.values(this.ListAccount);
 }
