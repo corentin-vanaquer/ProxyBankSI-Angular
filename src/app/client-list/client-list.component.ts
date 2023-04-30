@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Client } from '../models/client';
-import { ListClientService } from '../services/list-candidat.service';
+import { ListClientService } from '../services/list-client.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-client-list',
@@ -11,8 +13,9 @@ export class ClientListComponent {
 
   @Input() allClient: Client[];
   @Output() clientToAccueil = new EventEmitter();
+  //router: any;
 
-  constructor( private cliSer : ListClientService ){}
+  constructor( private cliSer : ListClientService, private router: Router ){}
 
   ngOnInit() {
     this.cliSer.getAllClientsUrl().subscribe({
@@ -28,6 +31,10 @@ export class ClientListComponent {
 
   sendClientToAccueil(cli) {
     this.clientToAccueil.emit(cli);
+  }
+
+  onAddNewClient(): void {
+   this.router.navigateByUrl('/add');
   }
 }
 /*ngOnInit() {

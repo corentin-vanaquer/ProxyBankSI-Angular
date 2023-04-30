@@ -14,6 +14,9 @@ import { RouterModule } from '@angular/router';
 import { AccountListComponent } from './account-list/account-list.component';
 import { AccountListItemComponent } from './account-list-item/account-list-item.component';
 import { APP_ROUTING } from './app.routing';
+import { UpdateClientComponent } from './update-client/update-client.component';
+import { AddClientComponent } from './add-client/add-client.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,14 +28,18 @@ import { APP_ROUTING } from './app.routing';
     HomeAdvisorAccountListComponent,
     AccountListComponent,
     AccountListItemComponent,
-    AccountDetailsComponent
+    AccountDetailsComponent,
+    UpdateClientComponent,
+    AddClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

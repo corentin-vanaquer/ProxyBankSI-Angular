@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ListClientService {
+export class ListCandidatesService {
   private ListClient: Client[] = [
     new Client(1, 'bart', 'simpson', "ici", "35000", "rennes", " 0889"),
     new Client(2, 'homer', 'simpson', "ici", "35000", "rennes", " 0889"),
@@ -24,4 +24,5 @@ export class ListClientService {
   getAllClientsUrl(): Observable<Client[]>{
     return this.http.get<Client[]>(this.url);
   }
+
 }
