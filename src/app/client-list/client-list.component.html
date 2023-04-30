@@ -1,3 +1,4 @@
 <li class="container-list-client">
   <app-client-list-item (clientToList)="sendClientToAccueil($event)" *ngFor="let cli of allClient" [oneClient]="cli"></app-client-list-item>
 </li>
+<button (click)="onAddNewClient()">Ajouter nouveau Client</button>

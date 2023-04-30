@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Client } from '../models/client';
-import { ListClientService } from '../services/list-candidat.service';
+import { ListClientService } from '../services/list-client.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home-advisor-client-list',
@@ -11,7 +13,7 @@ export class HomeAdvisorClientListComponent {
   tabClients: Client[] = [];
   selectedClient: Client;
 
-  constructor(private cliSer: ListClientService){}
+  constructor(private cliSer: ListClientService, private router: Router){}
 
   ngOnInit(){
     this.tabClients = this.cliSer.getAllClients();
@@ -21,4 +23,6 @@ export class HomeAdvisorClientListComponent {
   recupererSelectedCli(cli) {
     this.selectedClient = cli;
   }
+
+
 }
