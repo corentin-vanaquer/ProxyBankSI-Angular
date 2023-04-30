@@ -17,7 +17,7 @@ export class AddClientComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private listClientService: ListClientService,
-              private router: Router) {} 
+              private router: Router) {}
 ngOnInit(): void {
   this.clientForm = this.formBuilder.group({
     firstname:[null, Validators.required],
@@ -40,7 +40,7 @@ this.clientPriview$ = this.clientForm.valueChanges.pipe(map(formValue =>({
 }
   onSubmitForm():void{
   this.listClientService.addClient(this.clientForm.value).pipe(
-    tap(() => this.router.navigateByUrl('/add'))).subscribe()
+    tap(() => this.router.navigateByUrl(''))).subscribe()
 
   }
 }
@@ -50,5 +50,5 @@ this.clientPriview$ = this.clientForm.valueChanges.pipe(map(formValue =>({
     console.log(newClient);
 
     this.CliSer.addClient(newClient);
-    this.router.navigateByUrl('/client'); 
+    this.router.navigateByUrl('/client');
 } */

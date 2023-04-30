@@ -1,14 +1,16 @@
-    <div class="details-container">
-        <div class="details">
-            <h3 class="name"> {{cliSelected.name }} {{cliSelected.firstname }}</h3>
-            <p class="id"> Identifiant: {{cliSelected.id}}</p>
-            <p class="address"> Adresse: {{cliSelected.address }} {{cliSelected.zipcode}} {{cliSelected.city}} </p>
-            <p class="contact"> Telephone: {{cliSelected.phone}}</p>
-            <div class="buttons"  *ngIf="cliSelected">
-                <button (click)="onUpdateClient()">Modifier</button>
-                <button>Gerer Compte</button>
-                <button>Supprimer</button>
-            </div> 
-       </div>
-    </div>
+<div class="details-container" *ngIf="cliSelected">
+  <div class="details">
+    <h3 id="name"> {{cliSelected.name }} {{cliSelected.firstname }}</h3>
+    <p class="id card-details"> Identifiant: {{cliSelected.id}}</p>
+    <p class="address card-details"> Adresse: {{cliSelected.address }}</p>
+    <p class="address card-details">Code Postal : {{cliSelected.zipcode}}</p>
+    <p class="address card-details">Ville : {{cliSelected.city}}</p>
+    <p class="contact card-details"> Telephone: {{cliSelected.phone}}</p>
+  </div>
+  <div class="buttons">
+    <button (click)="onUpdateClient()" id="button-alert">Modifier</button>
+    <button id="button-ok">Gerer Compte</button>
+    <button id="button-danger">Supprimer</button>
+  </div>
 
+</div>
