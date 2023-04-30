@@ -18,6 +18,8 @@ import { UpdateClientComponent } from './update-client/update-client.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InfosComponent } from './infos/infos.component';
+import { AddCurrentAccountComponent } from './add-current-account/add-current-account.component';
+import { AddSavingsAccountComponent } from './add-savings-account/add-savings-account.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { InfosComponent } from './infos/infos.component';
     AccountDetailsComponent,
     UpdateClientComponent,
     AddClientComponent,
-    InfosComponent
+    InfosComponent,
+    AddCurrentAccountComponent,
+    AddSavingsAccountComponent
   ],
   imports: [
     BrowserModule,
