@@ -19,6 +19,8 @@ import { AddClientComponent } from './add-client/add-client.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddCurrentAccountComponent } from './add-current-account/add-current-account.component';
 import { AddSavingsAccountComponent } from './add-savings-account/add-savings-account.component';
+import { HistoricalComponent } from './historical/historical.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AddSavingsAccountComponent } from './add-savings-account/add-savings-ac
     UpdateClientComponent,
     AddClientComponent,
     AddCurrentAccountComponent,
-    AddSavingsAccountComponent
+    AddSavingsAccountComponent,
+    HistoricalComponent,
+    TransferComponent
   ],
   imports: [
     BrowserModule,

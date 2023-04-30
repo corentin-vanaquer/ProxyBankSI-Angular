@@ -1,1 +1,13 @@
-<p>account-details works!</p>
+<br><br>
+<div>
+    <button (click)="option = 'historical'" >Historique</button>
+    <button (click)="option = 'transfer'">Virement</button>
+
+    <div *ngIf="option === 'historical'">
+        <app-historical></app-historical>
+      </div>
+      <div *ngIf="option === 'transfer'">
+        <app-transfer></app-transfer>
+      </div>
+
+</div>
