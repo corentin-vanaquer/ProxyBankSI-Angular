@@ -1,15 +1,15 @@
-<div>
-    <form #f="ngForm">
+<div class="container-transfert">
+  <form #f="ngForm">
 
-        <label for="">Compte bénéficiaire</label>
-        <input [(ngModel)]="TransferAction.beneficiarysAccount" type="text" required="true" name="beneficiarysAccount">
+    <label for="">Compte bénéficiaire</label>
+    <input [(ngModel)]="TransferAction.beneficiarysAccount" type="text" required="true" name="beneficiarysAccount" class="form-group">
 
-        <label for="">Montant du virement</label>
-        <input [(ngModel)]="TransferAction.amount" type="text" required="true" name="amount">
-
-        <button>Annuler</button>
-        <button>Accepter</button>
-    </form>
+    <label for="">Montant du virement</label>
+    <input [(ngModel)]="TransferAction.amount" type="text" required="true" name="amount" class="form-group">
+    <div class="button-container">
+    <button class="button-ok">Annuler</button>
+    <button class="button-danger">Accepter</button>
+  </div>
+  </form>
+  {{f.value | json }}
 </div>
-
-{{f.value | json }}

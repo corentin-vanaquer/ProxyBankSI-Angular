@@ -46,7 +46,7 @@ input {
   max-width: 30vw;
 }
 
-.action-buttons{
+.action-buttons {
   display: flex;
   justify-content: flex-end;
   margin-right: 10px;
@@ -55,7 +55,8 @@ input {
 
 }
 
-.action-buttons button { background-color: #519E8A;
+.action-buttons button {
+  background-color: #519E8A;
   width: 200px;
   height: 50px;
   border: 0px solid #519E8A;
@@ -63,5 +64,4 @@ input {
   font-size: 16px;
   margin-left: 10px;
   cursor: pointer;
-
 }

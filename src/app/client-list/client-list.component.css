@@ -16,7 +16,7 @@
   overflow: hidden;
 }
 
-#button-add {
+.button-add {
     background-color: #519E8A;
     width: 200px;
     height: 50px;

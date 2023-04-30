@@ -1,5 +1,5 @@
 <div class="container-create-client-form">
- <div class="form-card">
+  <div class="form-card">
     <h2>NOUVEAU CLIENT</h2>
     <form [formGroup]="clientForm" class="form-details">
       <div class="form-group">
@@ -26,9 +26,7 @@
         <label for="phone">Telephone</label>
         <input formControlName="phone" type="text" placeholder="06 12 34 56 78">
       </div>
-
     </form>
-
   </div>
   <div class="action-buttons">
     <button type="submit" (click)="onSubmitForm()" [disabled]="clientForm.invalid">Ajouter</button>

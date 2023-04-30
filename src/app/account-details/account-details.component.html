@@ -1,13 +1,13 @@
-<br><br>
-<div>
-    <button (click)="option = 'historical'" >Historique</button>
-    <button (click)="option = 'transfer'">Virement</button>
-
-    <div *ngIf="option === 'historical'">
-        <app-historical></app-historical>
-      </div>
-      <div *ngIf="option === 'transfer'">
-        <app-transfer></app-transfer>
-      </div>
+<div class="account-details-container">
+  <div class="buttons">
+    <button (click)="option = 'historical'" id="button-histo">Historique</button>
+    <button (click)="option = 'transfer'" id="button-virement">Virement</button>
+  </div>
+  <div *ngIf="option === 'historical'">
+    <app-historical></app-historical>
+  </div>
+  <div *ngIf="option === 'transfer'">
+    <app-transfer></app-transfer>
+  </div>
 
 </div>
