@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ListAccountService } from '../services/list-account.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-advisor-account-list',
@@ -11,17 +12,12 @@ export class HomeAdvisorAccountListComponent {
   accountArray: any = [];
   selectedAccount;
 
-  constructor(private accountService:ListAccountService){}
+  constructor(private accountService:ListAccountService, private route: ActivatedRoute){}
 
   ngOnInit(){
-    this.accountService.getAllAccounts().subscribe({
-      next: (accounts: any[]) => {
-        this.accountArray = accounts;
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    });
+   this.route.paramMap.subscribe(param => {
+    this.accountArray = history.state.account;
+   });
   }
 
   fetchSelectedAccount(account){
