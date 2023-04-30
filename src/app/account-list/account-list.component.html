@@ -1,3 +1,4 @@
 <app-account-list-item (accountToList)="sendAccountToHome($event)" *ngFor="let account of allAccounts" [account]="account"></app-account-list-item>
 
-
+<button (click)="addNewCurrentAccount()">Ajouter un compte courant</button>
+<button (click)="addNewSavingsAccount()">Ajouter un compte d'épargne</button>

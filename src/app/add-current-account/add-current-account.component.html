@@ -1,0 +1,30 @@
+<h2>AJOUTER COMPTE COURANT</h2>
+
+<div>
+    <form #f="ngForm">
+
+        <div>
+            <label for="">Numéro de compte</label>
+            <input [(ngModel)]="currentAccountToCreate.accountNumber" type="text" required="true" name="accountNumber">
+        </div>
+
+        <div>
+            <label for="">Solde</label>
+            <input [(ngModel)]="currentAccountToCreate.solde" type="text" required="true" name="solde">
+        </div>
+
+        <div>
+            <label for="">Seuil</label>
+            <input [(ngModel)]="currentAccountToCreate.threshold" type="text" required="true" name="threshold">
+        </div>
+
+        <button (click)="return()" type="button">Retour</button>
+        <button type="submit">Valider</button>
+
+
+    </form>
+</div>
+
+<pre>
+    {{f.value | json }}
+</pre>
