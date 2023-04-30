@@ -40,7 +40,7 @@ this.clientPriview$ = this.clientForm.valueChanges.pipe(map(formValue =>({
 }
   onSubmitForm():void{
   this.listClientService.addClient(this.clientForm.value).pipe(
-    tap(() => this.router.navigateByUrl('/add'))).subscribe()
+    tap(() => this.router.navigateByUrl(''))).subscribe()
 
   }
 }

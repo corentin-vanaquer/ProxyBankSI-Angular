@@ -13,8 +13,7 @@ export class ClientListComponent {
 
   @Input() allClient: Client[];
   @Output() clientToAccueil = new EventEmitter();
-  //router: any;
-
+  
   constructor( private cliSer : ListClientService, private router: Router ){}
 
   ngOnInit() {

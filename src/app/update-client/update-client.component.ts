@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ListClientService } from '../services/list-client.service';
+import { Client } from '../models/client';
 
 
 @Component({
@@ -9,7 +10,8 @@ import { ListClientService } from '../services/list-client.service';
   styleUrls: ['./update-client.component.css']
 })
 export class UpdateClientComponent {
-  clientToUpdate;
+  id;
+  clientToUpdate : Client;
   constructor(
     private actRoute: ActivatedRoute,
     private cliSer: ListClientService,
@@ -17,22 +19,33 @@ export class UpdateClientComponent {
   ){}
 
   ngOnInit() {
-/*     this.cliSer.getClientById(this.actRoute.snapshot.paramMap.get('id')).subscribe({
+ /*     this.cliSer
+     .getClientByIdUrl(this.actRoute.snapshot.paramMap.get('id')).subscribe({
       next : (response) => {
         this.clientToUpdate = response;
       },
       error: (err) => {
         console.log(err);
       },
-    }); */
-      
+    });  */
+
+    this.actRoute.paramMap.subscribe({
+      next: (p: ParamMap) => {
+        this.clientToUpdate = this.cliSer.getClientById(p.get('id'));
+      }
+    })
+       
+
+   /*   this.clientToUpdate = this.cliSer.getClientById(this.actRoute.snapshot.paramMap.get('id'));  */
+    
+     //this.clientToUpdate = 
   }
 
    onUpdateClient(){
     this.cliSer.updateClientUrl(this.clientToUpdate).subscribe({
       next : (response) => {
         alert(response['message']);
-        this.router.navigateByUrl('/:id/edit');
+        this.router.navigateByUrl('');
       },
       error:(err) => {
         console.log(err);

@@ -1,6 +1,8 @@
     <div class="details-container">
         <div class="details">
-            <h3 class="name"> {{cliSelected.name }} {{cliSelected.firstname }}</h3>
+            <h3 class="infos" *ngIf="cliSelected"> Informations Client </h3>
+            <p class="name"> Nom: {{cliSelected.name }} </p>
+            <p class="firstname"> Prénom: {{cliSelected.firstname }} </p>
             <p class="id"> Identifiant: {{cliSelected.id}}</p>
             <p class="address"> Adresse: {{cliSelected.address }} {{cliSelected.zipcode}} {{cliSelected.city}} </p>
             <p class="contact"> Telephone: {{cliSelected.phone}}</p>

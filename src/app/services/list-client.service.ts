@@ -28,20 +28,16 @@ export class ListClientService {
     return this.http.get<Client[]>(this.url);
   }
 
-  getClientById(id:number){
+  getClientById(id){
     return this.ListClient.find((element) => element.id == id);
   }
 
 
-  getClientByIdUrl(id:number): Observable<Client>{
+  getClientByIdUrl(id): Observable<Client>{
     return this.http.get<Client>(`${this.url}/${id}`);
   }
 
-  // methode pour ajouter un nouveau faceSnap par son id
-/*   addClient(newClient){
-    newClient.id = this.ListClient[this.ListClient.length - 1].id + 1;
-    this.ListClient.push(newClient);
-  } */
+  // Add a new client
   addClient(formValue:{firstname:string, name:string, adress:string, zipcode:string, city:string, phone:string}): Observable<Client>{
 
       return this.getAllClientsUrl().pipe(
@@ -55,6 +51,7 @@ export class ListClientService {
       )
   }
   
+  // Update client
   updateClient(updateCli){
     let i = this.ListClient.indexOf(updateCli);
     this.ListClient[i] = updateCli;

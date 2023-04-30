@@ -17,6 +17,7 @@ import { APP_ROUTING } from './app.routing';
 import { UpdateClientComponent } from './update-client/update-client.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InfosComponent } from './infos/infos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AccountListItemComponent,
     AccountDetailsComponent,
     UpdateClientComponent,
-    AddClientComponent
+    AddClientComponent,
+    InfosComponent
   ],
   imports: [
     BrowserModule,
