@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ListAccountService } from '../services/list-account.service';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AccountListComponent {
 
-  allAccounts : any = [];
+  @Input() allAccounts : any = [];
   @Output() accountToHome = new EventEmitter();
 
   constructor(private accountService : ListAccountService, private router : Router){}
