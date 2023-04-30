@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ListAccountService } from '../services/list-account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-list',
@@ -11,7 +12,7 @@ export class AccountListComponent {
   allAccounts : any = [];
   @Output() accountToHome = new EventEmitter();
 
-  constructor(private accountService : ListAccountService){}
+  constructor(private accountService : ListAccountService, private router : Router){}
 
   ngOnInit(){
     this.accountService.getAllAccounts().subscribe({
@@ -28,4 +29,12 @@ export class AccountListComponent {
   sendAccountToHome(account){
     this.accountToHome.emit(account);
   }
+
+  addNewCurrentAccount(): void {
+    this.router.navigateByUrl('/add-current-account');
+   }
+
+   addNewSavingsAccount(): void {
+    this.router.navigateByUrl('/add-savings-account');
+   }
 }
