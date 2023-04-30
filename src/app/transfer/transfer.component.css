@@ -1,0 +1,45 @@
+.container-transfert {
+  margin-left: 10px;
+  border: 0px solid #EAFFFD;
+  border-radius: 10px;
+  background-color: #EAFFFD;
+  margin: 5px 10px;
+  height: 60vh;
+  padding-top: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  width: 30vw;
+}
+
+label {
+  margin-left: 10px;
+}
+
+.button-container {
+  margin-top: 24px;
+}
+
+button {
+  width: 115px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.button-ok {
+  background-color: #519E8A;
+  border: 0px solid #519E8A;
+}
+
+.button-danger {
+  background-color: #EC0B43;
+  border: 0px solid #EC0B43
+}

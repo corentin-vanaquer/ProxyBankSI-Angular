@@ -1,0 +1,16 @@
+.container-histo {
+  margin-left: 10px;
+  border: 0px solid #EAFFFD;
+  border-radius: 10px;
+  background-color: #EAFFFD;
+  margin: 5px 10px;
+  height: 60vh;
+  padding-top: 10px;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+}

@@ -17,11 +17,10 @@
   flex-direction: column;
   background-color: #6c9cfc;
   overflow: hidden;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.details{
+.details {
   display: flex;
   flex-direction: column;
   font-size: 16px;
@@ -53,6 +52,7 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
 button {
   background-color: #EAFFFD;
   width: 115px;
@@ -68,7 +68,7 @@ button {
 }
 
 #button-alert {
-background-color: #F1A66A;
+  background-color: #F1A66A;
 }
 
 #button-ok {

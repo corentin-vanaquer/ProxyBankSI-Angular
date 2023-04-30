@@ -1,30 +1,32 @@
-<h2>AJOUTER COMPTE D'EPARGNE</h2>
-
-<div>
+<div class="container-create-account-form">
+  <div class="form-card">
+    <h2>AJOUTER COMPTE D'EPARGNE</h2>
     <form #f="ngForm">
 
-        <div>
-            <label for="">Numéro de compte</label>
-            <input [(ngModel)]="savingsAccountToCreate.accountNumber" type="text" required="true" name="accountNumber">
-        </div>
+      <div class="form-group">
+        <label for="">Numéro de compte</label>
+        <input [(ngModel)]="savingsAccountToCreate.accountNumber" type="text" required="true" name="accountNumber" placeholder="12345">
+      </div>
 
-        <div>
-            <label for="">Solde</label>
-            <input [(ngModel)]="savingsAccountToCreate.solde" type="text" required="true" name="solde">
-        </div>
+      <div class="form-group">
+        <label for="">Solde</label>
+        <input [(ngModel)]="savingsAccountToCreate.solde" type="text" required="true" name="solde" placeholder="1000">
+      </div>
 
-        <div>
-            <label for="">Taux</label>
-            <input [(ngModel)]="savingsAccountToCreate.rate" type="text" required="true" name="taux">
-        </div>
-
-        <button (click)="return()" type="button">Annuler</button>
-        <button type="submit">Valider</button>
-
-
+      <div class="form-group">
+        <label for="">Taux</label>
+        <input [(ngModel)]="savingsAccountToCreate.rate" type="text" required="true" name="taux" placeholder="0.1">
+      </div>
     </form>
-</div>
 
-<pre>
+
+    <pre>
     {{f.value | json }}
-</pre>
+  </pre>
+  </div>
+  <div class="action-buttons">
+    <button type="submit" class="button-ok">Valider</button>
+    <button (click)="return()" type="button" class="button-danger">Annuler</button>
+
+  </div>
+</div>
