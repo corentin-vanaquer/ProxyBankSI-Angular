@@ -5,7 +5,7 @@
 .account-details-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 80vh;
   max-height: 80vh;
   max-width: 100%;
@@ -23,9 +23,7 @@
 .buttons {
   display: flex;
   justify-content: flex-start;
-  margin-top: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 25px 10px;
 }
 
 button {
