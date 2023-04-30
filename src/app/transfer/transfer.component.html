@@ -1,0 +1,15 @@
+<div>
+    <form #f="ngForm">
+
+        <label for="">Compte bénéficiaire</label>
+        <input [(ngModel)]="TransferAction.beneficiarysAccount" type="text" required="true" name="beneficiarysAccount">
+
+        <label for="">Montant du virement</label>
+        <input [(ngModel)]="TransferAction.amount" type="text" required="true" name="amount">
+
+        <button>Annuler</button>
+        <button>Accepter</button>
+    </form>
+</div>
+
+{{f.value | json }}
