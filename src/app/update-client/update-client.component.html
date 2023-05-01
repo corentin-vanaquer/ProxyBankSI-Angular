@@ -1,1 +1,16 @@
-<p>update-client works!</p>
+<div class="details-container" *ngIf="clientData">
+  <div class="details">
+    <h3 id="name"> {{clientData.name }} {{clientData.firstname }}</h3>
+    <p class="id card-details"> Identifiant: {{clientData.id}}</p>
+    <p class="address card-details"> Adresse: {{clientData.address }}</p>
+    <p class="address card-details">Code Postal : {{clientData.zipcode}}</p>
+    <p class="address card-details">Ville : {{clientData.city}}</p>
+    <p class="contact card-details"> Telephone: {{clientData.phone}}</p>
+  </div>
+  <div class="buttons">
+    <button  id="button-ok">annuler</button>
+    <button  id="button-alert">Modifier</button>
+
+  </div>
+
+</div>
