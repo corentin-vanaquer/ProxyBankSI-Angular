@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ListClientService } from '../services/list-client.service';
 import { Client } from '../models/client';
+import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,8 +12,9 @@ import { Client } from '../models/client';
   styleUrls: ['./update-client.component.css']
 })
 export class UpdateClientComponent {
-  id;
-  clientToUpdate : Client;
+  //@Input() cliSelected: Client;
+  client: Client;
+  clientToUpdate;
   constructor(
     private actRoute: ActivatedRoute,
     private cliSer: ListClientService,
@@ -19,7 +22,7 @@ export class UpdateClientComponent {
   ){}
 
   ngOnInit() {
- /*     this.cliSer
+  /*    this.cliSer
      .getClientByIdUrl(this.actRoute.snapshot.paramMap.get('id')).subscribe({
       next : (response) => {
         this.clientToUpdate = response;
@@ -29,28 +32,30 @@ export class UpdateClientComponent {
       },
     });  */
 
-    this.actRoute.paramMap.subscribe({
+/*     this.actRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
-        this.clientToUpdate = this.cliSer.getClientById(p.get('id'));
+        this.client = this.cliSer.getClientByIdUrl(p.get('id'));
       }
     })
-       
-
-   /*   this.clientToUpdate = this.cliSer.getClientById(this.actRoute.snapshot.paramMap.get('id'));  */
-    
-     //this.clientToUpdate = 
+     */
+ /*    const clientId = this.actRoute.snapshot.paramMap('id');
+    console.log(clientId); */
+    //this.client = this.cliSer.getClientByIdUrl('id');
+     
   }
+   
 
    onUpdateClient(){
-    this.cliSer.updateClientUrl(this.clientToUpdate).subscribe({
-      next : (response) => {
+
+   this.cliSer.updateClientUrl(this.client).subscribe({
+      next: (response) => {
         alert(response['message']);
         this.router.navigateByUrl('');
       },
-      error:(err) => {
+      error: (err) => {
         console.log(err);
       },
-    });
-  
+   });
+ 
   }
 }

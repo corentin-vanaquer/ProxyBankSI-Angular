@@ -8,7 +8,7 @@
     <p class="contact card-details"> Telephone: {{cliSelected.phone}}</p>
   </div>
   <div class="buttons">
-    <button (click)="onUpdateClient()" id="button-alert">Modifier</button>
+    <button [routerLink]="[cliSelected.id]" id="button-alert">Modifier</button>
     <button id="button-ok">Gerer Compte</button>
     <button id="button-danger">Supprimer</button>
   </div>

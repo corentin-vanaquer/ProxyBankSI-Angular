@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Client } from '../models/client';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ListClientService } from '../services/list-client.service';
+import { ClientListComponent } from '../client-list/client-list.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-infos',
@@ -6,7 +11,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./infos.component.css']
 })
 export class InfosComponent {
-  //id;
+  
+ clientInfos!: Client;
+ clientInfos$!: Observable<Client>
+  constructor(
+        private activatedRoute: ActivatedRoute,
+        private router: Router,
+        private cliSer: ListClientService,    
+  ){}
 
+ ngOnInit(){
+     const clientId = this.activatedRoute.params['id'];
+    this.clientInfos$ = this.cliSer.getClientByIdUrl(clientId); 
 
+/* /* 
+  this.activatedRoute.paramMap.subscribe({
+      next:(p: ParamMap) =>{
+        this.clientInfos = this.cliSer.getClientById(p.get('id')); */
+        
+/*         .subscribe({
+          next:(response: Client) =>{
+            this.cliInfos = response;
+            console.log(this.id);
+          },
+          error:(err) =>{
+            console.log(err.error['message'],err['status']); */
+          
+          }
+        
 }
+

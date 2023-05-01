@@ -56,6 +56,7 @@ export class ListClientService {
     let i = this.ListClient.indexOf(updateCli);
     this.ListClient[i] = updateCli;
   }
+
   updateClientUrl(updateCli){
     return this.http.put(`${this.url}/${updateCli.id}`, updateCli);
   }

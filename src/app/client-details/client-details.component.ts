@@ -9,6 +9,7 @@ import { ListClientService } from '../services/list-client.service';
   styleUrls: ['./client-details.component.css']
 })
 export class ClientDetailsComponent implements OnInit {
+  //public cliId: number;
   constructor(private router: Router, private cliSer: ListClientService ){}
   @Input() cliSelected: Client; 
 
@@ -16,8 +17,9 @@ ngOnInit(): void {
   
 }
 
-onUpdateClient(){
-  this.cliSer.updateClient(this.cliSelected);
-  this.router.navigateByUrl('/edit');
+/* onViewClient(){
+  this.router.navigateByUrl(`/${this.cliSelected.id}`);
+  this.cliId= this.cliSelected.id;
+} */
 }
-}
+
