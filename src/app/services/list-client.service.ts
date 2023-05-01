@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Client } from '../models/client';
 import { Observable, map, switchMap } from 'rxjs';
@@ -13,7 +13,7 @@ export class ListClientService {
     new Client(3, 'marge', 'simpson', "ici", "35000", "rennes", " 0889"),
     new Client(4, 'Cedric', 'Le vrai', "ici", "35000", "rennes", " 0889"),
   ];
- 
+
 
   getAllClients() {
     return this.ListClient;
@@ -22,7 +22,7 @@ export class ListClientService {
   constructor(private http: HttpClient) { }
   //ListClient : Client[] =[];
   private url = "http://localhost:8080/clients"
-  
+
 
   getAllClientsUrl(): Observable<Client[]>{
     return this.http.get<Client[]>(this.url);
@@ -54,13 +54,23 @@ export class ListClientService {
         switchMap(newClient => this.http.post<Client>('http://localhost:8080/clients',newClient))
       )
   }
-  
+
   updateClient(updateCli){
     let i = this.ListClient.indexOf(updateCli);
     this.ListClient[i] = updateCli;
   }
   updateClientUrl(updateCli){
     return this.http.put(`${this.url}/${updateCli.id}`, updateCli);
+  }
+
+  deleteClientUrl(clientId: number): Observable<number>{
+    let httpheaders = new HttpHeaders()
+    .set('Content-Type', 'application/json');
+    let options={
+      headers: httpheaders
+    };
+
+    return this.http.delete<number>(this.url+"/"+clientId);
   }
 
 }

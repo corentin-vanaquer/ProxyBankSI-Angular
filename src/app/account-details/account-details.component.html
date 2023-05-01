@@ -2,6 +2,7 @@
   <div class="buttons">
     <button (click)="option = 'historical'" id="button-histo">Historique</button>
     <button (click)="option = 'transfer'" id="button-virement">Virement</button>
+    <!--<button (click)="deleteAccount(accountSelected.id)" class="button-delete">Supprimer</button>-->
   </div>
   <div *ngIf="option === 'historical'">
     <app-historical></app-historical>
