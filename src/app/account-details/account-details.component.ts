@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-account-details',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./account-details.component.css']
 })
 export class AccountDetailsComponent {
-  option = "historical"
+  
+  @Input() accountSelected; 
+
+   option = "historical";
+
+
 }

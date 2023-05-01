@@ -1,30 +1,23 @@
-import { Component } from '@angular/core';
-import { ListAccountService } from '../services/list-account.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home-advisor-account-list',
   templateUrl: './home-advisor-account-list.component.html',
   styleUrls: ['./home-advisor-account-list.component.css']
 })
-export class HomeAdvisorAccountListComponent {
+export class HomeAdvisorAccountListComponent implements OnInit {
 
   accountArray: any = [];
   selectedAccount;
 
-  constructor(private accountService:ListAccountService){}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(){
-    this.accountService.getAllAccounts().subscribe({
-      next: (accounts: any[]) => {
-        this.accountArray = accounts;
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    });
+  ngOnInit() {
+
   }
 
-  fetchSelectedAccount(account){
+  fetchSelectedAccount(account) {
     this.selectedAccount = account;
   }
 

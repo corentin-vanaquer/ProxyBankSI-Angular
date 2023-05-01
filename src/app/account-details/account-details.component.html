@@ -1,4 +1,4 @@
-<div class="account-details-container">
+<div class="account-details-container" *ngIf="accountSelected">
   <div class="buttons">
     <button (click)="option = 'historical'" id="button-histo">Historique</button>
     <button (click)="option = 'transfer'" id="button-virement">Virement</button>
