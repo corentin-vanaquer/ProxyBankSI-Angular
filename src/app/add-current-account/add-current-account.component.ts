@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ListAccountService } from '../services/list-account.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-current-account',
@@ -7,16 +9,43 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-current-account.component.css']
 })
 export class AddCurrentAccountComponent {
-
   currentAccountToCreate = {
     accountNumber: '',
     solde: '',
     threshold: ''
   };
 
-  constructor(private router: Router){}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private accountService: ListAccountService
+  ) {}
 
-  return(){
-    this.router.navigateByUrl('/account');
+  return() {
+    const clientId = this.route.snapshot.paramMap.get('id');
+    this.router.navigateByUrl(`/account/${clientId}`);
+  }
+
+  createCurrentAccount(formValue) {
+    const clientId = this.route.snapshot.paramMap.get('id');
+
+    this.accountService.createCurrentAccountService(formValue).subscribe(
+      (response) => {
+        const accountId = response.id;
+        const clientIdNum = Number.parseInt(clientId);
+
+        const request = {
+          clientId: clientIdNum,
+          accountId: accountId
+        };
+
+        this.accountService
+          .assignCurrentAccountToClient(request)
+          .subscribe(() => {
+            alert('Le compte a été créé avec succès');
+            this.router.navigate([`/account/${clientId}`]);
+          });
+      }
+    );
   }
 }

@@ -1,3 +1,8 @@
-  <li (click)="sendAccountToList()" *ngIf="account.rate || account.threshold " class="account-item">
-    Account : {{ account.id }} || Account Number: {{ account.accountNumber }} || Solde: {{ account.solde }} || Rate : {{ account.rate }} || threshold: {{ account.threshold }}
+  <li (click)="sendAccountToList()" class="account-item">
+    <p *ngIf="account.threshold != null">Compte courant</p>
+    <p *ngIf="account.rate != null">Compte épargne</p>
+    <p>Numéro de compte: {{ account.accountNumber }}</p>
+    <p>Solde: {{ account.solde }}</p>
+    <p *ngIf="account.rate != null">Taux : {{ account.rate }}</p>
+    <p *ngIf="account.threshold != null">Seuil: {{ account.threshold }}</p>
   </li>
