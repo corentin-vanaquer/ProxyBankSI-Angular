@@ -7,11 +7,12 @@ import { AddCurrentAccountComponent } from "./add-current-account/add-current-ac
 import { AddSavingsAccountComponent } from "./add-savings-account/add-savings-account.component";
 import { ClientDetailsComponent } from "./client-details/client-details.component";
 import { InfosComponent } from "./infos/infos.component";
+import { ClientInfosComponent } from "./client-infos/client-infos.component";
 
 const myRoutes : Routes = [
   {path:'', component: HomeAdvisorClientListComponent},
   {path: 'add', component: AddClientComponent},
-  {path:'edit/:id', component: InfosComponent},
+  {path:'myid/:id', component: ClientInfosComponent},
   {path:'account/:id', component: HomeAdvisorAccountListComponent},
   {path:'add-current-account', component: AddCurrentAccountComponent},
   {path:'add-savings-account', component: AddSavingsAccountComponent},

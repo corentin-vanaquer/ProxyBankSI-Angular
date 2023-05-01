@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Client } from '../models/client';
 import { ListClientService } from '../services/list-client.service';
 import { Router } from '@angular/router';
@@ -10,9 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-advisor-client-list.component.css']
 })
 export class HomeAdvisorClientListComponent {
+  
   tabClients: Client[] = [];
+  //@Output() infosClientSelected = new EventEmitter();
   selectedClient: Client;
-
+  
   constructor(private cliSer: ListClientService, private router: Router){}
 
   ngOnInit(){
@@ -23,6 +25,9 @@ export class HomeAdvisorClientListComponent {
   recupererSelectedCli(cli) {
     this.selectedClient = cli;
   }
+/*   recupererSelectedClient(cli) {
+    this.infosClientSelected.emit(cli);
+  } */
 
 
 }

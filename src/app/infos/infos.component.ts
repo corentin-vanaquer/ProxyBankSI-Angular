@@ -1,9 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Client } from '../models/client';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { ListClientService } from '../services/list-client.service';
-import { ClientListComponent } from '../client-list/client-list.component';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-infos',
@@ -11,14 +8,20 @@ import { Observable } from 'rxjs';
   styleUrls: ['./infos.component.css']
 })
 export class InfosComponent implements OnInit{
- selectedClient;
+  @Output() infosClientSelected = new EventEmitter();
+/*  selectedClient;
  clientInfos!: Client;
- clientInfos$!: Observable<Client>
-  constructor(
-        private activatedRoute: ActivatedRoute,
-        private router: Router,
-        private cliSer: ListClientService,    
-  ){}
+ clientInfos$!: Observable<Client> */
+// @Input ('cliSelected') public selectedClient;
+ //@Input() cliSelected: Client;
+//@Input() selectedClient: Client;
+//@Input() allClients : any = [];
+ //allClients: Client[];
+ //@Output() clientToAccueil = new EventEmitter();
+ 
+ 
+ constructor(
+        private activatedRoute: ActivatedRoute){}
 
  ngOnInit(){
    /*   const clientId = this.activatedRoute.params['id'];
@@ -36,12 +39,32 @@ export class InfosComponent implements OnInit{
           },
           error:(err) =>{
             console.log(err.error['message'],err['status']); */
-          
-          }
+ /* if(this.cliSelected){
+  this.cliSer.getAllClientsId(this.cliSelected.id).subscribe(clients => {
+    this.allClients = clients;
+  }) */
 
-  recupererSelectedCli(client){
-    this.selectedClient = client;
-  }
-        
+ }
+
+
 }
+/*   this.activatedRoute.paramMap.subscribe(params =>{
+        const clientId = params['id'];
+        const clientIdNum =Number.parseInt(clientId);
+        this.cliSer.getAllClientsId(clientIdNum).subscribe
+        (clients =>{
+          this.cliSelected = clients;
+        });
+
+      });
+            */ 
+         /*  recupererSelectedCli(client){
+            this.clientToAccueil.emit(client); */
+
+           /*  sendClientToAccueil(cli){
+              this.clientToAccueil.emit(cli);
+            }
+          } 
+         */
+
 

@@ -22,6 +22,7 @@ import { AddCurrentAccountComponent } from './add-current-account/add-current-ac
 import { AddSavingsAccountComponent } from './add-savings-account/add-savings-account.component';
 import { HistoricalComponent } from './historical/historical.component';
 import { TransferComponent } from './transfer/transfer.component';
+import { ClientInfosComponent } from './client-infos/client-infos.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TransferComponent } from './transfer/transfer.component';
     AddCurrentAccountComponent,
     AddSavingsAccountComponent,
     HistoricalComponent,
-    TransferComponent
+    TransferComponent,
+    ClientInfosComponent
   ],
   imports: [
     BrowserModule,
