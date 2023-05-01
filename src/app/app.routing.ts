@@ -10,7 +10,7 @@ const myRoutes : Routes = [
   {path:'', component: HomeAdvisorClientListComponent},
   {path: 'add', component: AddClientComponent},
   {path:'edit', component: UpdateClientComponent},
-  {path:'account', component: HomeAdvisorAccountListComponent},
+  {path:'account/:id', component: HomeAdvisorAccountListComponent},
   {path:'add-current-account', component: AddCurrentAccountComponent},
   {path:'add-savings-account', component: AddSavingsAccountComponent},
 ];
