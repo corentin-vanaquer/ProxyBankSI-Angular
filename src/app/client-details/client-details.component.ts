@@ -26,8 +26,10 @@ export class ClientDetailsComponent implements OnInit {
   }
 
   onUpdateClient() {
-    this.router.navigateByUrl('/edit');
+    const clientData = JSON.stringify(this.cliSelected);
+    this.router.navigate(['/edit'], { state: { clientData: clientData } });
   }
+
 
   onManageAccount() {
     const clientId = this.cliSelected.id;
