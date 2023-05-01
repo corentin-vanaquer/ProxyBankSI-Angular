@@ -12,50 +12,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./update-client.component.css']
 })
 export class UpdateClientComponent {
-  //@Input() cliSelected: Client;
-  client: Client;
-  clientToUpdate;
-  constructor(
-    private actRoute: ActivatedRoute,
-    private cliSer: ListClientService,
-    private router: Router
-  ){}
+  clientData: any;
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-  /*    this.cliSer
-     .getClientByIdUrl(this.actRoute.snapshot.paramMap.get('id')).subscribe({
-      next : (response) => {
-        this.clientToUpdate = response;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });  */
-
-/*     this.actRoute.paramMap.subscribe({
-      next: (p: ParamMap) => {
-        this.client = this.cliSer.getClientByIdUrl(p.get('id'));
-      }
-    })
-     */
- /*    const clientId = this.actRoute.snapshot.paramMap('id');
-    console.log(clientId); */
-    //this.client = this.cliSer.getClientByIdUrl('id');
-     
-  }
-   
-
-   onUpdateClient(){
-
-   this.cliSer.updateClientUrl(this.client).subscribe({
-      next: (response) => {
-        alert(response['message']);
-        this.router.navigateByUrl('');
-      },
-      error: (err) => {
-        console.log(err);
-      },
-   });
- 
+    if (history.state && history.state.clientData) {
+      this.clientData = JSON.parse(history.state.clientData);
+    }
   }
 }

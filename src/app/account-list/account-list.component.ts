@@ -17,7 +17,7 @@ export class AccountListComponent {
   }
 
 
-  ngOnInit(){
+ngOnInit(){
     this.route.paramMap.subscribe(params => {
       const clientId = params.get('id');
       const clientIdNum = Number.parseInt(clientId);
@@ -32,10 +32,12 @@ export class AccountListComponent {
   }
 
   addNewCurrentAccount(): void {
-    this.router.navigateByUrl('/add-current-account');
+    const clientId = this.route.snapshot.paramMap.get('id');
+    this.router.navigateByUrl(`/add-current-account/${clientId}`);
    }
 
    addNewSavingsAccount(): void {
-    this.router.navigateByUrl('/add-savings-account');
+    const clientId = this.route.snapshot.paramMap.get('id');
+    this.router.navigateByUrl(`/add-savings-account/${clientId}`);
    }
 }

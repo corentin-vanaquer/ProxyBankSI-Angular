@@ -1,38 +1,16 @@
-<p>update-client works!</p>
-<form #f="ngForm">
-    <fieldset>
-       
-        <h3 class="infos"> Informations Client</h3> 
-        <div class="form-group">
-            <label class="col-md-4 control-label">Nom</label>
-            <input [(ngModel)]="client.name" name="name" class="form-control" required="true" type="text">
-        </div>
+<div class="details-container" *ngIf="clientData">
+  <div class="details">
+    <h3 id="name"> {{clientData.name }} {{clientData.firstname }}</h3>
+    <p class="id card-details"> Identifiant: {{clientData.id}}</p>
+    <p class="address card-details"> Adresse: {{clientData.address }}</p>
+    <p class="address card-details">Code Postal : {{clientData.zipcode}}</p>
+    <p class="address card-details">Ville : {{clientData.city}}</p>
+    <p class="contact card-details"> Telephone: {{clientData.phone}}</p>
+  </div>
+  <div class="buttons">
+    <button  id="button-ok">annuler</button>
+    <button  id="button-alert">Modifier</button>
 
-        <div class="form-group">
-        <label class="col-md-4 control-label">Prénom</label>
-        <input [(ngModel)]="client.firstname" name="firstname" class="form-control" required="true" type="text">
-        </div>
+  </div>
 
-        <div class="form-group">
-            <label class="col-md-4 control-label">Adresse</label>
-            <input [(ngModel)]="client.address" name="address" class="form-control" required="true" type="text">
-        </div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Code Postal</label>
-            <input [(ngModel)]="client.zipcode" name="zipcode" class="form-control" type="text">
-        </div>
-     
-        <div class="form-group">
-            <label class="col-md-4 control-label">City</label>
-            <input [(ngModel)]="client.city" name="city" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label">Téléphone</label>
-            <input [(ngModel)]="client.phone" name="phone" class="form-control" type="text">
-        </div>
-    </fieldset>
-    <br>
-    <button (click)="onUpdateClient()" type="submit" class="btn btn-success">Valider</button>
-</form>
+</div>

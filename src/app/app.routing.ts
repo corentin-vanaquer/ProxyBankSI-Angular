@@ -12,10 +12,10 @@ import { ClientInfosComponent } from "./client-infos/client-infos.component";
 const myRoutes : Routes = [
   {path:'', component: HomeAdvisorClientListComponent},
   {path: 'add', component: AddClientComponent},
-  {path:'myid/:id', component: ClientInfosComponent},
+  { path: 'edit', component: UpdateClientComponent },
   {path:'account/:id', component: HomeAdvisorAccountListComponent},
-  {path:'add-current-account', component: AddCurrentAccountComponent},
-  {path:'add-savings-account', component: AddSavingsAccountComponent},
+  {path:'add-current-account/:id', component: AddCurrentAccountComponent},
+  {path:'add-savings-account/:id', component: AddSavingsAccountComponent},
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(myRoutes);
