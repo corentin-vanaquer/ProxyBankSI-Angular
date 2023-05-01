@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ListAccountService } from '../services/list-account.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-list',
@@ -12,17 +12,18 @@ export class AccountListComponent {
   @Input() allAccounts : any = [];
   @Output() accountToHome = new EventEmitter();
 
-  constructor(private accountService : ListAccountService, private router : Router){}
+  constructor(private accountService: ListAccountService, private router: Router, private route: ActivatedRoute) {
+
+  }
+
 
   ngOnInit(){
-    this.accountService.getAllAccounts().subscribe({
-      next:(result: any) => {
-        this.allAccounts = result;
-        console.log(`Δ result:`, result);
-      },
-      error: (err) => {
-        console.log(err);
-      },
+    this.route.paramMap.subscribe(params => {
+      const clientId = params.get('id');
+      const clientIdNum = Number.parseInt(clientId);
+      this.accountService.getAllAccounts(clientIdNum).subscribe(accounts => {
+        this.allAccounts = accounts;
+      });
     });
   }
 

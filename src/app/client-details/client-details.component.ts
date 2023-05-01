@@ -10,10 +10,16 @@ import { ListAccountService } from '../services/list-account.service';
 })
 export class ClientDetailsComponent implements OnInit {
   constructor(private router: Router, private accountService : ListAccountService){}
-  @Input() cliSelected: Client; 
+  @Input() cliSelected: Client;
+  allAccounts;
 
 ngOnInit(): void {
-  
+  if(this.cliSelected) {
+    this.accountService.getAllAccounts(this.cliSelected.id).subscribe(accounts => {
+      this.allAccounts = accounts;
+    });
+
+  }
 }
 
 onUpdateClient(){
@@ -21,8 +27,10 @@ onUpdateClient(){
 }
 
 onManageAccount(){
-  this.accountService.getAllAccounts(this.cliSelected.id).subscribe(account => {
-    this.router.navigateByUrl('account',{state : {accounts : account}} );
-  })
+  const clientId = this.cliSelected.id;
+  const clientIdString = clientId.toString();
+  console.log(`Δ Δ ClientDetailsComponent Δ onManageAccount Δ clientIdString:`, clientIdString);
+  this.router.navigateByUrl(`/account/${clientIdString}`);
 }
+
 }

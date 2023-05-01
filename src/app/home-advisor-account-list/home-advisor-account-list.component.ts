@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { ListAccountService } from '../services/list-account.service';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -7,20 +6,18 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './home-advisor-account-list.component.html',
   styleUrls: ['./home-advisor-account-list.component.css']
 })
-export class HomeAdvisorAccountListComponent {
+export class HomeAdvisorAccountListComponent implements OnInit {
 
   accountArray: any = [];
   selectedAccount;
 
-  constructor(private accountService:ListAccountService, private route: ActivatedRoute){}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(){
-   this.route.paramMap.subscribe(param => {
-    this.accountArray = history.state.account;
-   });
+  ngOnInit() {
+
   }
 
-  fetchSelectedAccount(account){
+  fetchSelectedAccount(account) {
     this.selectedAccount = account;
   }
 
