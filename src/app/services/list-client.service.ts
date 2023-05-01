@@ -8,10 +8,10 @@ import { Observable, map, switchMap } from 'rxjs';
 })
 export class ListClientService {
    private ListClient: Client[] = [
-    new Client(1, 'bart', 'simpson', "ici", "35000", "rennes", " 0889"),
+ /*    new Client(1, 'bart', 'simpson', "ici", "35000", "rennes", " 0889"),
     new Client(2, 'homer', 'simpson', "ici", "35000", "rennes", " 0889"),
     new Client(3, 'marge', 'simpson', "ici", "35000", "rennes", " 0889"),
-    new Client(4, 'Cedric', 'Le vrai', "ici", "35000", "rennes", " 0889"),
+    new Client(4, 'Cedric', 'Le vrai', "ici", "35000", "rennes", " 0889"), */
   ];
  
 
@@ -23,12 +23,15 @@ export class ListClientService {
   //ListClient : Client[] =[];
   private url = "http://localhost:8080/clients"
   
+  getAllClientsId(id:number): Observable<Client[]>{
+    return this.http.get<Client[]>(`${this.url}/${id}clients`);
+  }
 
   getAllClientsUrl(): Observable<Client[]>{
     return this.http.get<Client[]>(this.url);
   }
 
-  getClientById(id){
+  getClientById(id:number){
     return this.ListClient.find((element) => element.id == id);
   }
 
@@ -58,7 +61,7 @@ export class ListClientService {
   }
 
   updateClientUrl(updateCli){
-    return this.http.put(`${this.url}/${updateCli.id}`, updateCli);
+    return this.http.put(`${this.url}/${updateCli.id}`,updateCli);
   }
 
 }

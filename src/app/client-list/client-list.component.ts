@@ -14,7 +14,7 @@ export class ClientListComponent {
   @Input() allClient: Client[];
   @Output() clientToAccueil = new EventEmitter();
   
-  constructor( private cliSer : ListClientService, private router: Router ){}
+  constructor( private cliSer : ListClientService, private router: Router){}
 
   ngOnInit() {
     this.cliSer.getAllClientsUrl().subscribe({

@@ -1,3 +1,4 @@
+
 <div class="details-container" *ngIf="cliSelected">
   <div class="details">
     <h3 id="name"> {{cliSelected.name }} {{cliSelected.firstname }}</h3>
@@ -8,13 +9,8 @@
     <p class="contact card-details"> Telephone: {{cliSelected.phone}}</p>
   </div>
   <div class="buttons">
-<<<<<<< HEAD
-    <button [routerLink]="[cliSelected.id]" id="button-alert">Modifier</button>
-    <button id="button-ok">Gerer Compte</button>
-=======
     <button (click)="onUpdateClient()" id="button-alert">Modifier</button>
     <button (click)="onManageAccount()" id="button-ok">Gerer Compte</button>
->>>>>>> 5daccbc549805ea2ccd67bb3855e52d2fee51fd3
     <button id="button-danger">Supprimer</button>
   </div>
 

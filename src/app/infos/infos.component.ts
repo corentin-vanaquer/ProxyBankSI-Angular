@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Client } from '../models/client';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ListClientService } from '../services/list-client.service';
@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
   templateUrl: './infos.component.html',
   styleUrls: ['./infos.component.css']
 })
-export class InfosComponent {
-  
+export class InfosComponent implements OnInit{
+ selectedClient;
  clientInfos!: Client;
  clientInfos$!: Observable<Client>
   constructor(
@@ -21,8 +21,8 @@ export class InfosComponent {
   ){}
 
  ngOnInit(){
-     const clientId = this.activatedRoute.params['id'];
-    this.clientInfos$ = this.cliSer.getClientByIdUrl(clientId); 
+   /*   const clientId = this.activatedRoute.params['id'];
+    this.clientInfos$ = this.cliSer.getClientByIdUrl(clientId);  */
 
 /* /* 
   this.activatedRoute.paramMap.subscribe({
@@ -38,6 +38,10 @@ export class InfosComponent {
             console.log(err.error['message'],err['status']); */
           
           }
+
+  recupererSelectedCli(client){
+    this.selectedClient = client;
+  }
         
 }
 

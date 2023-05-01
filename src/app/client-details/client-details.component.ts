@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Client } from '../models/client';
 import { Router } from '@angular/router';
 import { ListAccountService } from '../services/list-account.service';
+import { ListClientService } from '../services/list-client.service';
 
 @Component({
   selector: 'app-client-details',
@@ -24,7 +25,10 @@ ngOnInit(): void {
 }
 
 onUpdateClient(){
-  this.router.navigateByUrl('/edit');
+  const clientId = this.cliSelected.id;
+  const clientIdString = clientId.toString();
+  //console.log(`Δ Δ ClientDetailsComponent Δ onManageAccount Δ clientIdString:`, clientIdString);
+  this.router.navigateByUrl(`/edit/${clientIdString}`);
 }
 
 onManageAccount(){
