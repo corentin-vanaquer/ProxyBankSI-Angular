@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ListAccountService } from '../services/list-account.service';
 
 @Component({
   selector: 'app-add-savings-account',
@@ -14,10 +15,34 @@ export class AddSavingsAccountComponent {
     rate: ''
   };
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private route: ActivatedRoute, private accountService:ListAccountService){}
 
   return(){
-    this.router.navigateByUrl('/account');
+    const clientId = this.route.snapshot.paramMap.get('id');
+    this.router.navigateByUrl(`/account/${clientId}`);
   }
 
+  createSavingAccount(formValue) {
+    const clientId = this.route.snapshot.paramMap.get('id');
+
+    this.accountService.createSavingAccountService(formValue).subscribe(
+      (response) => {
+
+        const accountId = response.id;
+        const clientIdNum = Number.parseInt(clientId);
+
+        const request = {
+          clientId: clientIdNum,
+          accountId: accountId
+        };
+
+        this.accountService
+          .assignSavingAccountToClient(request)
+          .subscribe(() => {
+          alert('Le compte a été créé avec succès');
+          this.router.navigate([`/account/${clientId}`]);
+      });
+      }
+    );
+  }
 }

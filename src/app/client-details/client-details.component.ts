@@ -29,7 +29,6 @@ onUpdateClient(){
 onManageAccount(){
   const clientId = this.cliSelected.id;
   const clientIdString = clientId.toString();
-  console.log(`Δ Δ ClientDetailsComponent Δ onManageAccount Δ clientIdString:`, clientIdString);
   this.router.navigateByUrl(`/account/${clientIdString}`);
 }
 

@@ -6,7 +6,8 @@
   border-radius: 10px;
   margin: 5px;
   padding: 11px;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  justify-content: space-between;
 }
 
 .account-item:hover {
