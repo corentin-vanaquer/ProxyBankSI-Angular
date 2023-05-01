@@ -36,13 +36,4 @@ export class ClientListComponent {
    this.router.navigateByUrl('/add');
   }
 }
-/*ngOnInit() {
-  this.candSer.getAllCandidatsAPI().subscribe({
-    next: (result: Candidat[]) => {
-      this.allCandidats = result;
-    },
-    error: (err) => {
-      console.log(err);
-    },
-  });
-}*/
+
