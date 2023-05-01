@@ -15,7 +15,6 @@ export class ListAccountService {
   urlAssignCurrentAccount = `http://localhost:8080/currentAccounts/add-client-to-account`;
   urlAssignSavingAccount = `http://localhost:8080/savingAccounts/add-client-to-account`;
 
-
   constructor(private http: HttpClient) {}
 
   getAllAccounts(id:number): Observable<any[]>{
@@ -38,5 +37,11 @@ export class ListAccountService {
     return this.http.post<SavingAccount>(this.urlAssignSavingAccount, request);
   }
 
+  /*deleteCurrentAccount(accountId: number){
+    return this.http.delete(`${this.urlCreateCurrentAccount}/${accountId}`);
+  }
 
+  deleteSavingsAccount(accountId: number){
+    return this.http.delete(`${this.urlCreateSavingsAccount}/${accountId}`);
+  }*/
 }
