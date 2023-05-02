@@ -40,4 +40,8 @@ ngOnInit(){
     const clientId = this.route.snapshot.paramMap.get('id');
     this.router.navigateByUrl(`/add-savings-account/${clientId}`);
    }
+
+   return(){
+    this.router.navigateByUrl(``);
+   }
 }
