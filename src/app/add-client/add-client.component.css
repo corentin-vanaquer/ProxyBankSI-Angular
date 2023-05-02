@@ -76,3 +76,14 @@ input {
 #button-alert {
   background-color: #F1A66A;
 }
+
+.alert {
+  font-family: sans-serif;
+  color: black;
+  background-color: rgba(246, 60, 107, 0.3);
+  max-width: 29.6vw;
+  padding-left: 1rem;
+  /* text-align: center; */
+  font-size: 0.8rem;
+  border-radius: 5px;
+}

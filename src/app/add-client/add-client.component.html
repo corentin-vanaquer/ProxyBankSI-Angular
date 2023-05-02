@@ -6,13 +6,13 @@
       <div class="form-group">
         <label for="firstname">Prénom</label>
         <input formControlName="firstname" pattern="[A-Za-z-]+" required type="text" class="form-control" placeholder="Jean" onfocus="this.placeholder=''">
-        <span *ngIf="clientForm.get('firstname').invalid && (clientForm.get('firstname').dirty || clientForm.get('firstname').touched)" class="error-msg">Le prénom doit contenir uniquement des lettres.</span>
+        <span *ngIf="clientForm.get('firstname').invalid && (clientForm.get('firstname').dirty || clientForm.get('firstname').touched)" class="alert">Le prénom doit contenir uniquement des lettres.</span>
       </div>
-      
+
       <div class="form-group">
         <label for="name">Nom</label>
         <input formControlName="name" pattern="[A-Za-z-]*" required type="text" placeholder="Dupont" onfocus="this.placeholder=''">
-        <span *ngIf="clientForm.get('name').invalid && (clientForm.get('name').dirty || clientForm.get('firstname').touched)" class="error-msg">Le nom doit contenir uniquement des lettres.</span>
+        <span *ngIf="clientForm.get('name').invalid && (clientForm.get('name').dirty || clientForm.get('firstname').touched)" class="alert">Le nom doit contenir uniquement des lettres.</span>
       </div>
 
       <div class="form-group">
@@ -27,7 +27,7 @@
       <div class="form-group">
         <label for="city">Ville</label>
         <input formControlName="city" pattern="[A-Za-z-]*" required type="text" placeholder="Paris" onfocus="this.placeholder=''">
-        <span *ngIf="clientForm.get('city').invalid && (clientForm.get('city').dirty || clientForm.get('firstname').touched)" class="error-msg">La ville uniquement des lettres.</span>
+        <span *ngIf="clientForm.get('city').invalid && (clientForm.get('city').dirty || clientForm.get('firstname').touched)" class="alert">La ville uniquement des lettres.</span>
       </div>
 
       <div class="form-group">
