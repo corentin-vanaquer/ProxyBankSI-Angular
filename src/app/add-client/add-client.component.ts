@@ -43,6 +43,10 @@ this.clientPriview$ = this.clientForm.valueChanges.pipe(map(formValue =>({
     tap(() => this.router.navigateByUrl(''))).subscribe()
 
   }
+
+  return(){
+    this.router.navigateByUrl(``);
+  }
 }
 
 
