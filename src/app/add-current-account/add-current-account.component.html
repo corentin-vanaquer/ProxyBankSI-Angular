@@ -7,8 +7,8 @@
         <label for="solde">Solde</label>
         <input type="text" id="solde" name="solde" [(ngModel)]="currentAccountToCreate.solde" placeholder="2000" required pattern="[0-9]+" #soldeInput="ngModel" onfocus="this.placeholder=''">
         <div *ngIf="!soldeInput.valid && (soldeInput.dirty || soldeInput.touched)" class="invalid-feedback">
-          <div *ngIf="soldeInput.errors['required']">Le champ solde est obligatoire.</div>
-          <div *ngIf="soldeInput.errors['pattern']">Le champ solde doit être un nombre entier.</div>
+          <div *ngIf="soldeInput.errors['required']" class="alert">Le champ solde est obligatoire.</div>
+          <div *ngIf="soldeInput.errors['pattern']" class="alert">Le champ solde doit être un nombre entier.</div>
         </div>
       </div>
 
@@ -16,8 +16,8 @@
         <label for="">Seuil</label>
         <input [(ngModel)]="currentAccountToCreate.threshold" #seuilInput="ngModel" type="text" required="true" name="threshold" required pattern="[0-9]+" placeholder="1000" onfocus="this.placeholder=''" min="1" >
         <div *ngIf="!seuilInput.valid && (seuilInput.dirty || seuilInput.touched)" class="invalid-feedback">
-          <div *ngIf="seuilInput.errors['required']">Le champ seuil est obligatoire.</div>
-          <div *ngIf="seuilInput.errors['pattern']">Le champ seuil doit être un nombre entier.</div>
+          <div *ngIf="seuilInput.errors['required']" class="alert">Le champ seuil est obligatoire.</div>
+          <div *ngIf="seuilInput.errors['pattern']" class="alert">Le champ seuil doit être un nombre entier.</div>
         </div>
       </div>
 

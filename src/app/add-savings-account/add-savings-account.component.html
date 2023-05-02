@@ -7,8 +7,8 @@
         <label for="solde">Solde</label>
         <input type="text" id="solde" name="solde" [(ngModel)]="savingsAccountToCreate.solde" placeholder="2000" required pattern="[0-9]+" #soldeInput="ngModel" onfocus="this.placeholder=''">
         <div *ngIf="!soldeInput.valid && (soldeInput.dirty || soldeInput.touched)" class="invalid-feedback">
-          <div *ngIf="soldeInput.errors['required']">Le champ Solde est obligatoire.</div>
-          <div *ngIf="soldeInput.errors['pattern']">Le champ Solde doit être un nombre entier et ne pas contenir d'espace.</div>
+          <div *ngIf="soldeInput.errors['required']" class="alert">Le champ Solde est obligatoire.</div>
+          <div *ngIf="soldeInput.errors['pattern']" class="alert">Le champ Solde doit être un nombre entier et ne pas contenir d'espace.</div>
         </div>
       </div>
 
