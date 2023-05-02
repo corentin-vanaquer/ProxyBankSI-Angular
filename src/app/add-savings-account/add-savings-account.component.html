@@ -4,8 +4,12 @@
     <form #f="ngForm">
 
       <div class="form-group">
-        <label for="">Solde</label>
-        <input [(ngModel)]="savingsAccountToCreate.solde" type="text" required="true" name="solde" placeholder="1000" onfocus="this.placeholder=''">
+        <label for="solde">Solde</label>
+        <input type="text" id="solde" name="solde" [(ngModel)]="savingsAccountToCreate.solde" placeholder="2000" required pattern="[0-9]+" #soldeInput="ngModel" onfocus="this.placeholder=''">
+        <div *ngIf="!soldeInput.valid && (soldeInput.dirty || soldeInput.touched)" class="invalid-feedback">
+          <div *ngIf="soldeInput.errors['required']">Le champ Solde est obligatoire.</div>
+          <div *ngIf="soldeInput.errors['pattern']">Le champ Solde doit être un nombre entier et ne pas contenir d'espace.</div>
+        </div>
       </div>
 
       <div class="form-group">
@@ -23,7 +27,7 @@
   </div>
   <div class="action-buttons">
     <button (click)="return()" type="button" class="button-danger">Annuler</button>
-    <button (click)="createSavingAccount(f.value)" type="submit" class="button-ok">Valider</button>
+    <button (click)="createSavingAccount(f.value)" type="submit" class="button-ok" [disabled]="f.invalid">Valider</button>
 
   </div>
 </div>
