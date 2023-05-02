@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListAccountService } from '../services/list-account.service';
 import { tap } from 'rxjs/operators';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-current-account',
@@ -17,20 +17,15 @@ export class AddCurrentAccountComponent {
     threshold: ''
   };
 
-  soldeNoWhiteSpace = /^\S*$/;
-
+  patterns = {
+    onlyNumbers: '[0-9]+'
+  };
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private accountService: ListAccountService
   ) {}
-
-    soldeFromControl = new FormControl('', [
-     Validators.required,
-     Validators.min(0),
-     Validators.pattern(this.soldeNoWhiteSpace)
-  ]);
 
   return() {
     const clientId = this.route.snapshot.paramMap.get('id');
