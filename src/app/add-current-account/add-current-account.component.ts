@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListAccountService } from '../services/list-account.service';
 import { tap } from 'rxjs/operators';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-current-account',
@@ -9,17 +10,27 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./add-current-account.component.css']
 })
 export class AddCurrentAccountComponent {
+
   currentAccountToCreate = {
     accountNumber: '',
     solde: '',
     threshold: ''
   };
 
+  soldeNoWhiteSpace = /^\S*$/;
+
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private accountService: ListAccountService
   ) {}
+
+    soldeFromControl = new FormControl('', [
+     Validators.required,
+     Validators.min(0),
+     Validators.pattern(this.soldeNoWhiteSpace)
+  ]);
 
   return() {
     const clientId = this.route.snapshot.paramMap.get('id');

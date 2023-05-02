@@ -2,25 +2,45 @@
   <div class="form-card">
     <h2>AJOUTER COMPTE COURANT</h2>
     <form #f="ngForm">
-      <!-- <div class="form-group">
-        <label for="">Numéro de compte</label>
-        <input [(ngModel)]="currentAccountToCreate.accountNumber" type="text" required="true" name="accountNumber" placeholder="12345" onfocus="this.placeholder=''">
-      </div> -->
 
       <div class="form-group">
         <label for="">Solde</label>
-        <input [(ngModel)]="currentAccountToCreate.solde" type="text" required="true" name="solde" placeholder="1000" onfocus="this.placeholder=''">
+        <input [(ngModel)]="currentAccountToCreate.solde" type="text" required="true" name="solde" placeholder="1000" onfocus="this.placeholder=''" [formControl]="soldeFromControl">
+      </div>
+
+      <div *ngIf="soldeFromControl.invalid && (soldeFromControl.dirty || soldeFromControl.touched)">
+        <div *ngIf="soldeFromControl.errors['required']">
+          Le champ Solde est obligatoire.
+        </div>
+        <div *ngIf="soldeFromControl.errors['min']">
+          Le Solde doit être positif.
+        </div>
+        <div *ngIf="soldeFromControl.errors?.['pattern']">
+          Le champ Solde ne peut pas contenir que des espaces.
+      </div>
       </div>
 
       <div class="form-group">
         <label for="">Seuil</label>
-        <input [(ngModel)]="currentAccountToCreate.threshold" type="text" required="true" name="threshold" placeholder="1000" onfocus="this.placeholder=''">
+        <input [(ngModel)]="currentAccountToCreate.threshold" type="text" required="true" name="threshold" placeholder="1000" onfocus="this.placeholder=''"  [formControl]="soldeFromControl">
       </div>
-    </form>
 
+      <div *ngIf="soldeFromControl.invalid && (soldeFromControl.dirty || soldeFromControl.touched)">
+        <div *ngIf="soldeFromControl.errors['required']">
+          Le champ seuil est obligatoire.
+        </div>
+        <div *ngIf="soldeFromControl.errors['min']">
+          Le champ seuil doit être positif.
+        </div>
+        <div *ngIf="soldeFromControl.errors?.['pattern']">
+          Le champ Seuil ne peut pas contenir que des espaces.
+      </div>
+      </div>
+
+    </form>
   </div>
   <div class="action-buttons">
     <button (click)="return()" type="button" class="button-danger">Annuler</button>
-    <button (click)="createCurrentAccount(f.value)" type="submit" class="button-ok">Valider</button>
+    <button (click)="createCurrentAccount(f.value)" type="submit" class="button-ok" [disabled]="soldeFromControl.invalid || soldeFromControl.pristine" >Valider</button>
   </div>
 </div>
