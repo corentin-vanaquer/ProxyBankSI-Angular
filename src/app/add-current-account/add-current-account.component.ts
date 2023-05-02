@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListAccountService } from '../services/list-account.service';
 import { tap } from 'rxjs/operators';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-current-account',
@@ -9,10 +10,15 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./add-current-account.component.css']
 })
 export class AddCurrentAccountComponent {
+
   currentAccountToCreate = {
     accountNumber: '',
     solde: '',
     threshold: ''
+  };
+
+  patterns = {
+    onlyNumbers: '[0-9]+'
   };
 
   constructor(
