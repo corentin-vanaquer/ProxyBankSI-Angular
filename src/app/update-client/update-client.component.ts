@@ -14,11 +14,22 @@ import { Observable } from 'rxjs';
 export class UpdateClientComponent {
   clientData: any;
 
-  constructor(private route: ActivatedRoute) {}
-
+  constructor(
+    private route: ActivatedRoute,
+    private clientService : ListClientService,
+    private router : Router
+    ) {}
+    
   ngOnInit() {
     if (history.state && history.state.clientData) {
       this.clientData = JSON.parse(history.state.clientData);
     }
   }
+
+onEditClient() {
+  const clientDataUpdate = JSON.stringify(this.clientData);
+  this.router.navigate([''], { state: { clientDataUpdate: clientDataUpdate } });
+
+}
+
 }

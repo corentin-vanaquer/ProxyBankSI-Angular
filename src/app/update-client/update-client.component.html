@@ -38,21 +38,10 @@
     </fieldset>
 
     
-
-
-
-
-
-<!-- 
-    <p class="id card-details"> Identifiant: {{clientData.id}}</p>
-    <p class="address card-details"> Adresse: {{clientData.address }}</p>
-    <p class="address card-details">Code Postal : {{clientData.zipcode}}</p>
-    <p class="address card-details">Ville : {{clientData.city}}</p>
-    <p class="contact card-details"> Telephone: {{clientData.phone}}</p> -->
   </div>
   <div class="buttons">
     <button  id="button-ok">annuler</button>
-    <button  id="button-alert">Modifier</button>
+    <button (click) = "onEditClient()" id="button-alert">Modifier</button>
 
   </div>
 

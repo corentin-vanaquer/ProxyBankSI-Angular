@@ -13,3 +13,7 @@
 .account-item:hover {
   cursor: pointer;
 }
+
+.red-background {
+  background-color: lightcoral;
+}

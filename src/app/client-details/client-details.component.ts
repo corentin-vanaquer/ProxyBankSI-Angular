@@ -30,7 +30,7 @@ export class ClientDetailsComponent implements OnInit {
 
   onUpdateClient() {
     const clientData = JSON.stringify(this.cliSelected);
-    this.router.navigate([''], { state: { clientData: clientData } });
+    this.router.navigate(['/edit'], { state: { clientData: clientData } });
   }
 
 
@@ -46,7 +46,6 @@ export class ClientDetailsComponent implements OnInit {
         location.reload();
     }
 }
-
   getClients() {
     this.allclients = this.clientService.getAllClientsUrl();
   }

@@ -20,7 +20,7 @@ export class AddClientComponent implements OnInit {
               private router: Router) {}
 ngOnInit(): void {
   this.clientForm = this.formBuilder.group({
-    firstname:[null, Validators.required],
+    firstname:[null, Validators.required, Validators],
     name:[null, Validators.required],
     address:[null, Validators.required],
     zipcode:[null, Validators.required],
