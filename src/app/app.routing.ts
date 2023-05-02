@@ -5,6 +5,9 @@ import { AddClientComponent } from "./add-client/add-client.component";
 import { UpdateClientComponent } from "./update-client/update-client.component";
 import { AddCurrentAccountComponent } from "./add-current-account/add-current-account.component";
 import { AddSavingsAccountComponent } from "./add-savings-account/add-savings-account.component";
+import { ClientDetailsComponent } from "./client-details/client-details.component";
+import { InfosComponent } from "./infos/infos.component";
+import { ClientInfosComponent } from "./client-infos/client-infos.component";
 
 const myRoutes : Routes = [
   {path:'', component: HomeAdvisorClientListComponent},

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Client } from '../models/client';
 import { Router } from '@angular/router';
 import { ListAccountService } from '../services/list-account.service';
@@ -13,6 +13,9 @@ import { catchError, throwError, tap, Observable } from 'rxjs';
 export class ClientDetailsComponent implements OnInit {
   constructor(private router: Router, private accountService: ListAccountService, private clientService: ListClientService) { }
   @Input() cliSelected: Client;
+
+
+  selectedClient: Client;
   allAccounts;
   allclients: Observable<Client[]>;
 
@@ -43,7 +46,6 @@ export class ClientDetailsComponent implements OnInit {
         location.reload();
     }
 }
-
   getClients() {
     this.allclients = this.clientService.getAllClientsUrl();
   }

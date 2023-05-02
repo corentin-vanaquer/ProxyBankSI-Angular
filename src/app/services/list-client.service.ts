@@ -8,10 +8,10 @@ import { Observable, map, switchMap } from 'rxjs';
 })
 export class ListClientService {
    private ListClient: Client[] = [
-    new Client(1, 'bart', 'simpson', "ici", "35000", "rennes", " 0889"),
+ /*    new Client(1, 'bart', 'simpson', "ici", "35000", "rennes", " 0889"),
     new Client(2, 'homer', 'simpson', "ici", "35000", "rennes", " 0889"),
     new Client(3, 'marge', 'simpson', "ici", "35000", "rennes", " 0889"),
-    new Client(4, 'Cedric', 'Le vrai', "ici", "35000", "rennes", " 0889"),
+    new Client(4, 'Cedric', 'Le vrai', "ici", "35000", "rennes", " 0889"), */
   ];
 
 
@@ -33,15 +33,11 @@ export class ListClientService {
   }
 
 
-  getClientByIdUrl(id:number): Observable<Client>{
+  getClientByIdUrl(id): Observable<Client>{
     return this.http.get<Client>(`${this.url}/${id}`);
   }
 
-  // methode pour ajouter un nouveau faceSnap par son id
-/*   addClient(newClient){
-    newClient.id = this.ListClient[this.ListClient.length - 1].id + 1;
-    this.ListClient.push(newClient);
-  } */
+  // Add a new client
   addClient(formValue:{firstname:string, name:string, adress:string, zipcode:string, city:string, phone:string}): Observable<Client>{
 
       return this.getAllClientsUrl().pipe(
@@ -59,6 +55,7 @@ export class ListClientService {
     let i = this.ListClient.indexOf(updateCli);
     this.ListClient[i] = updateCli;
   }
+
   updateClientUrl(updateCli){
     return this.http.put(`${this.url}/${updateCli.id}`, updateCli);
   }

@@ -1,3 +1,4 @@
+
 <div class="details-container" *ngIf="cliSelected">
   <div class="details">
     <h3 id="name"> {{cliSelected.name }} {{cliSelected.firstname }}</h3>
@@ -9,6 +10,7 @@
   </div>
   <div class="buttons">
     <button (click)="onUpdateClient()" id="button-alert">Modifier</button>
+   <!--  <button [routerLink]= "[cliSelected.id]" id="button-alert">Modifier</button> -->
     <button (click)="onManageAccount()" id="button-ok">Gerer Compte</button>
     <button (click)="deleteClient(cliSelected.id)" id="button-danger">Supprimer</button>
   </div>

@@ -17,10 +17,12 @@ import { APP_ROUTING } from './app.routing';
 import { UpdateClientComponent } from './update-client/update-client.component';
 import { AddClientComponent } from './add-client/add-client.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InfosComponent } from './infos/infos.component';
 import { AddCurrentAccountComponent } from './add-current-account/add-current-account.component';
 import { AddSavingsAccountComponent } from './add-savings-account/add-savings-account.component';
 import { HistoricalComponent } from './historical/historical.component';
 import { TransferComponent } from './transfer/transfer.component';
+import { ClientInfosComponent } from './client-infos/client-infos.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,12 @@ import { TransferComponent } from './transfer/transfer.component';
     AccountDetailsComponent,
     UpdateClientComponent,
     AddClientComponent,
+    InfosComponent,
     AddCurrentAccountComponent,
     AddSavingsAccountComponent,
     HistoricalComponent,
-    TransferComponent
+    TransferComponent,
+    ClientInfosComponent
   ],
   imports: [
     BrowserModule,

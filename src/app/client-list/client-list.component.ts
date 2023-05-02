@@ -13,9 +13,8 @@ export class ClientListComponent {
 
   @Input() allClient: Client[];
   @Output() clientToAccueil = new EventEmitter();
-  //router: any;
-
-  constructor( private cliSer : ListClientService, private router: Router ){}
+  
+  constructor( private cliSer : ListClientService, private router: Router){}
 
   ngOnInit() {
     this.cliSer.getAllClientsUrl().subscribe({
@@ -37,13 +36,4 @@ export class ClientListComponent {
    this.router.navigateByUrl('/add');
   }
 }
-/*ngOnInit() {
-  this.candSer.getAllCandidatsAPI().subscribe({
-    next: (result: Candidat[]) => {
-      this.allCandidats = result;
-    },
-    error: (err) => {
-      console.log(err);
-    },
-  });
-}*/
+

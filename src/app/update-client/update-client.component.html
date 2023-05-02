@@ -1,15 +1,47 @@
+
+
+
 <div class="details-container" *ngIf="clientData">
   <div class="details">
     <h3 id="name"> {{clientData.name }} {{clientData.firstname }}</h3>
-    <p class="id card-details"> Identifiant: {{clientData.id}}</p>
-    <p class="address card-details"> Adresse: {{clientData.address }}</p>
-    <p class="address card-details">Code Postal : {{clientData.zipcode}}</p>
-    <p class="address card-details">Ville : {{clientData.city}}</p>
-    <p class="contact card-details"> Telephone: {{clientData.phone}}</p>
+    <fieldset>
+        <div class="form-group">
+            <label class="col-md-4 control-label">Prénom</label>
+            <input [(ngModel)]="clientData.firstname" name="prenom" class="form-control" required="true" type="text">
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Nom</label>
+            <input [(ngModel)]="clientData.name" name="nom" class="form-control" required="true" type="text">
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Adresse</label>
+            <input [(ngModel)]="clientData.address" name="address" class="form-control" required="true" type="text">
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Code Postal</label>
+            <input [(ngModel)]="clientData.zipcode" name="zipcode" class="form-control" required="true" type="text">
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Ville</label>
+            <input [(ngModel)]="clientData.city" name="city" class="form-control" required="true" type="text">
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Telephone</label>
+            <input [(ngModel)]="clientData.phone" name="phone" class="form-control" required="true" type="text">
+        </div>
+
+    </fieldset>
+
+    
   </div>
   <div class="buttons">
     <button  id="button-ok">annuler</button>
-    <button  id="button-alert">Modifier</button>
+    <button (click) = "onEditClient()" id="button-alert">Modifier</button>
 
   </div>
 
