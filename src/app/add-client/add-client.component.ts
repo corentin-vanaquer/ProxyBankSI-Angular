@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListClientService } from '../services/list-client.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable, map, tap } from 'rxjs';
 import { Client } from '../models/client';
 
@@ -18,10 +18,13 @@ export class AddClientComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private listClientService: ListClientService,
               private router: Router) {}
+
+/*   nameFormControl = new FormControl('',[ Validators.required, Validators.minLength(1), value : string])    */          
 ngOnInit(): void {
+  
   this.clientForm = this.formBuilder.group({
-    firstname:[null, Validators.required, Validators],
-    name:[null, Validators.required],
+    firstname:[null, Validators.required, Validators.pattern('[A-Za-z-]*')],
+    name:[null, Validators.required, Validators.pattern('\b[A-Za-z-]+\b')],
     address:[null, Validators.required],
     zipcode:[null, Validators.required],
     city:[null, Validators.required],
