@@ -65,3 +65,7 @@ input {
   margin-left: 10px;
   cursor: pointer;
 }
+
+#button-alert {
+  background-color: #F1A66A;
+}
