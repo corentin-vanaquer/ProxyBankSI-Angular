@@ -1,6 +1,6 @@
 .container-create-account-form {
-  height: 80vh;
-  max-height: 80vh;
+  height: 70vh;
+  max-height: 70vh;
   width: 45vw;
   margin: 10px;
   border: 5px solid #AFC9FD;
@@ -19,7 +19,7 @@
   border-radius: 10px;
   background-color: #EAFFFD;
   margin: 5px 10px;
-  height: 80vh;
+  height: 70vh;
   padding-top: 10px;
 }
 
