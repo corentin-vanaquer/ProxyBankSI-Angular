@@ -2,7 +2,7 @@
     <p *ngIf="account.threshold != null">Compte courant</p>
     <p *ngIf="account.rate != null">Compte épargne</p>
     <p>Numéro de compte: {{ account.accountNumber }}</p>
-    <p>Solde: {{ account.solde }}</p>
-    <p *ngIf="account.rate != null">Taux : {{ account.rate }}</p>
+    <p>Solde: {{ account.solde }} €</p>
+    <p *ngIf="account.rate != null">Taux : {{ account.rate }} %</p>
     <p *ngIf="account.threshold != null">Seuil: {{ account.threshold }}</p>
   </li>

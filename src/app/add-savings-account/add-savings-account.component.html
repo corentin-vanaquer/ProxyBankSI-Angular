@@ -14,9 +14,15 @@
       </div>
 
       <div class="form-group">
-        <label for="">Taux</label>
-        <input [(ngModel)]="savingsAccountToCreate.rate" type="text" required="true" name="rate" placeholder="0.1" onfocus="this.placeholder=''">
+        <label for="rate">Taux</label>
+        <select [(ngModel)]="savingsAccountToCreate.rate" id="rate" name="rate" required class="select">
+          <option value="3">3%</option>
+          <option value="4">4%</option>
+          <option value="5">5%</option>
+          <option value="6">6%</option>
+        </select>
       </div>
+
     </form>
 
   </div>
