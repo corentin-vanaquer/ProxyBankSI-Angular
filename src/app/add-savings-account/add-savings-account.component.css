@@ -44,6 +44,7 @@ h2 {
 
 input {
   max-width: 30vw;
+  height: 24px;
 }
 
 .action-buttons {
@@ -75,4 +76,12 @@ input {
 
 select {
   width: 31vw;
+  height: 24px;
+}
+
+.alert {
+  font-family: sans-serif;
+  color: #EC0B43;
+  background-color: rgba(246, 60, 107, 0.3);
+  max-width: 30vw;
 }
