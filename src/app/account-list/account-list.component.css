@@ -28,10 +28,10 @@
 }
 
 .button-add2 {
-  background-color: #F1A66A;
+  background-color: #42a774;
   width: 200px;
   height: 50px;
-  border: 0px solid #F1A66A;
+  border: 0px solid #42a774;
   border-radius: 10px;
   font-size: 16px;
   margin-left: 10px;
@@ -43,4 +43,15 @@
   justify-content: flex-start;
   margin-bottom: 25px;
   margin-right: 10px;
+}
+
+.button-alert {
+  background-color: #F1A66A;
+  width: 200px;
+  height: 50px;
+  border: 0px solid #F1A66A;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
 }
