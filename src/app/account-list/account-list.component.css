@@ -7,12 +7,12 @@
   max-height: 80vh;
   max-width: 100%;
   margin: 10px;
-  border: 5px solid #749df0;
+  border: 5px solid #AFC9FD;
   border-radius: 15px;
-  box-shadow: 0px 0px 10px 1px #749df0;
+  box-shadow: 0px 0px 10px 1px #AFC9FD;
   display: flex;
   flex-direction: column;
-  background-color: #6c9cfc;
+  background-color: #AFC9FD;
   overflow: hidden;
 }
 

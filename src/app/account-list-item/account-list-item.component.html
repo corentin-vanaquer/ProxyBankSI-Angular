@@ -1,8 +1,8 @@
-  <li (click)="sendAccountToList()" class="account-item">
-    <p *ngIf="account.threshold != null">Compte courant</p>
-    <p *ngIf="account.rate != null">Compte épargne</p>
-    <p>Numéro de compte: {{ account.accountNumber }}</p>
-    <p>Solde: {{ account.solde }} €</p>
-    <p *ngIf="account.rate != null">Taux : {{ account.rate }} %</p>
-    <p *ngIf="account.threshold != null">Seuil: {{ account.threshold }}</p>
-  </li>
+<li (click)="sendAccountToList()" class="account-item" [ngStyle]="{'background-color': account.rate ? '#D6FFFB' :  (account.solde < 0 ? '#ff9999' : account.threshold ? '#fffcd4' : '')}">
+  <p *ngIf="account.threshold != null">Compte courant :</p>
+  <p *ngIf="account.rate != null">Compte épargne :</p>
+  <p>Numéro de compte: {{ account.id }}</p>
+  <p>Solde: {{ account.solde }} €</p>
+  <p *ngIf="account.rate != null">Taux : {{ account.rate }} %</p>
+  <p *ngIf="account.threshold != null">Seuil: {{ account.threshold }}</p>
+</li>
