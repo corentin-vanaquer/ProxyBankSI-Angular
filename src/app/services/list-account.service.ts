@@ -21,17 +21,37 @@ export class ListAccountService {
     return this.http.get<any[]>(`${this.urlGetAccounts}/${id}/accounts`);
   }
 
-  createCurrentAccountService(formValue) {
-    return this.http.post<CurrentAccount>(this.urlCreateCurrentAccount, formValue);
-  }
+/**
+ * This function sends a POST request to the server to create a new current account using the provided form data.
+ * 
+ * @param formValue The form data required to create the account.
+ * 
+ * @returns An observable that emits a response containing the ID of the newly created account.
+ */
+createCurrentAccountService(formValue) {
+  // Send a POST request to the server to create a new current account using the provided form data.
+  // The response from the server is an observable that emits the ID of the newly created account.
+  return this.http.post<CurrentAccount>(this.urlCreateCurrentAccount, formValue);
+}
+
 
   createSavingAccountService(formValue){
     return this.http.post<SavingAccount>(this.urlCreateSavingsAccount, formValue);
   }
 
-  assignCurrentAccountToClient(request) {
-    return this.http.post<CurrentAccount>(this.urlAssignCurrentAccount, request);
-  }
+/**
+ * This function sends a POST request to the server to assign the specified current account to a client.
+ * 
+ * @param request An object containing the client ID and the account ID to be assigned.
+ * 
+ * @returns An observable that emits a response containing the ID of the assigned account.
+ */
+assignCurrentAccountToClient(request) {
+  // Send a POST request to the server to assign the specified current account to a client.
+  // The response from the server is an observable that emits the ID of the assigned account.
+  return this.http.post<CurrentAccount>(this.urlAssignCurrentAccount, request);
+}
+
 
   assignSavingAccountToClient(request) {
     return this.http.post<SavingAccount>(this.urlAssignSavingAccount, request);

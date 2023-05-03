@@ -32,26 +32,43 @@ export class AddCurrentAccountComponent {
     this.router.navigateByUrl(`/account/${clientId}`);
   }
 
-  createCurrentAccount(formValue) {
-    const clientId = this.route.snapshot.paramMap.get('id');
+/**
+ * This function creates a current account for a specific client and assigns it to them.
+ * 
+ * @param formValue The form data required to create the account.
+ * 
+ * @returns Nothing.
+ */
+createCurrentAccount(formValue) {
+  // Get the client ID from the route.
+  const clientId = this.route.snapshot.paramMap.get('id');
 
-    this.accountService.createCurrentAccountService(formValue).subscribe(
-      (response) => {
-        const accountId = response.id;
-        const clientIdNum = Number.parseInt(clientId);
+  // Create the current account using the accountService.
+  // The subscribe method is used to wait for the server response.
+  this.accountService.createCurrentAccountService(formValue).subscribe(
+    (response) => {
+      // Get the ID of the created account.
+      const accountId = response.id;
+      const clientIdNum = Number.parseInt(clientId);
 
-        const request = {
-          clientId: clientIdNum,
-          accountId: accountId
-        };
+      // Create the request to assign the current account to the client.
+      const request = {
+        clientId: clientIdNum,
+        accountId: accountId
+      };
 
-        this.accountService
-          .assignCurrentAccountToClient(request)
-          .subscribe(() => {
-            alert('Le compte a été créé avec succès');
-            this.router.navigate([`/account/${clientId}`]);
-          });
-      }
-    );
-  }
+      // Assign the current account to the client using the accountService.
+      // The subscribe method is used to wait for the server response.
+      this.accountService
+        .assignCurrentAccountToClient(request)
+        .subscribe(() => {
+          // Show a confirmation alert.
+          alert('The account was created successfully and assigned to the client.');
+          // Redirect to the client's account page.
+          this.router.navigate([`/account/${clientId}`]);
+        });
+    }
+  );
+}
+
 }
